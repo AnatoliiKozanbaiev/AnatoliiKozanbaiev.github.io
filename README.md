@@ -1,2 +1,2 @@
 # AnnaStar
-Test fo Anna's website
+Test for Anna's website
