@@ -1,2 +1,2 @@
 # AnatoliiKozanbaiev.github.io
-CV AnatoliiKozanbaiev
+CV Anatolii Kozanbaiev
