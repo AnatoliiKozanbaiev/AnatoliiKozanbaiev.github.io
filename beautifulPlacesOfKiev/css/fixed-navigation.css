@@ -1,0 +1,23 @@
+@media all and (max-width: 960px){
+	#header{
+		position: fixed;
+		z-index:100;
+		height:auto;
+		max-height:84px;
+		padding:1.143em 0;
+	}
+	#content{padding:60px 0 0;}
+	#mainNav a{
+		font-weight: normal;
+		padding: 0;
+		line-height: 1.5em;
+		margin: 0 0 5px;
+	}
+	#mainNav span{
+		padding: 0 0.7em;
+	}
+}
+@media all and (max-width: 504px){
+	#mainNav li{margin: 0 2px;}
+	#mainNav a{font-size:1.1em;}
+}
