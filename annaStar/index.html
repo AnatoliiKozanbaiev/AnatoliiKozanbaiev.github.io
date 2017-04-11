@@ -24,6 +24,8 @@
 
 <body>
 
+	<div id="p_prldr"><div class="contpre"><span class="svg_anm"></span><br>Подождите<br><small>идет загрузка</small></div></div>
+
     <!-- Navigation -->
     <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
         <div class="container topnav">
@@ -37,7 +39,7 @@
                 </button>
                 <a class="navbar-brand topnav" href="#">Anna Star</a>
             </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
+
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
@@ -51,9 +53,7 @@
                     </li>
                 </ul>
             </div>
-            <!-- /.navbar-collapse -->
         </div>
-        <!-- /.container -->
     </nav>
 
 
@@ -147,14 +147,14 @@
         <div class="container">
 
             <div class="row">
-                <div class="col-lg-5 col-sm-6 post-1">
+                <div class="col-lg-5 col-sm-6 post">
                     <hr class="section-heading-spacer">
                     <div class="clearfix"></div>
                     <h2 class="section-heading">Коллекции<br>Нежность и воздушность</h2>
                     <p class="lead">У каждого бренда есть свои предпочтения в выборе тканей. Для нас на первых позициях всегда стоят нежный и струящийся шелк, тонкое кружево, мягкий бархат, шифон - все то, что способно создать ощущение простоты и легкости. Ни одна по-настоящему стильная и красивая вещь не может быть пошита из некачественной ткани. Дизайнерские изделия отличаются оригинальным кроем неизменно отвечают новейшим модным тенденциям. Великолепные брендовые вещи сразу же заслужили одобрение покупателей и получили немало положительных отзывов. Наши клинты могут себя побалывать не только вечерними платьями, но и деловыми костюмами, легкими сарафанами и даже купальниками. Мы создаем силуэты, подчеркивающие достоинства женской фигуры и вдохновляющие модниц на радость и новые свершения!<br><br>
 					<a href="lightdress.html#bottom"><button type="button" class="btn btn-default">Перейти к просмотру новинок</button></a></p>
                 </div>
-                <div class="col-lg-5 col-lg-offset-2 col-sm-6 post-1">
+                <div class="col-lg-5 col-lg-offset-2 col-sm-6 post">
                     <img class = "img-responsive" src = "images/gallery/reddress.jpeg" no-repeat;" alt = "">
                 </div>
             </div>
@@ -216,24 +216,9 @@
 </body>
 	
 	<script src="js/jquery-3.1.1.min.js"></script>
+	<script src = "js/preloader.js"></script>
 	<script src="js/viewportchecker.js"></script>
     <script src="js/bootstrap.js"></script>
-	
-	<script>
-		jQuery(document).ready(function() {
-			jQuery('.post').addClass("hidden-block").viewportChecker({
-				classToAdd: 'visible-block animated zoomIn',
-				offset: 150
-			});
-		});
-	</script>
-	<script>
-		jQuery(document).ready(function() {
-			jQuery('.post-1').addClass("hidden-block").viewportChecker({
-				classToAdd: 'visible-block animated fadeInUp',
-				offset: 150
-			});
-		});
-	</script>
+	<script src = "js/scroll-effects.js"></script>
 
 </html>
