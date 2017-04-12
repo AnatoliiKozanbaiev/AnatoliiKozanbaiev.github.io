@@ -38,7 +38,7 @@
 	position: absolute;
 	width: 41px;
 	height: 41px;
-	background: url(img/oval.svg) center center no-repeat;
+	background: url(../img/oval.svg) center center no-repeat;
 	background-size:41px;    
 	margin: -16px 0 0 -16px;
 }

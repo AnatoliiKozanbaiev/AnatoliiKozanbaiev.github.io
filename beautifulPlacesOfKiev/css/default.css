@@ -783,3 +783,11 @@
 	#content{padding:0;}
 	
 }
+
+.hidden-block {
+	opacity:0;
+}
+
+.visible-block {
+	opacity:1;
+}
