@@ -220,7 +220,7 @@ footer {
 	width: 250px;
 	height: 100px;
 	position: absolute;
-	left: 50%;top: 48%;
+	left: 48%;top: 50%;
 	margin-left:-125px;
 	margin-top:-75px;
 	color:#fff;
@@ -232,10 +232,10 @@ footer {
 
 #p_prldr .svg_anm {
 	position: absolute;
-	width: 41px;
-	height: 41px;
+	width: 71px;
+	height: 71px;
 	background: url(../images/oval.svg) center center no-repeat;
-	background-size:41px;    
+	background-size:71px;    
 	margin: -16px 0 0 -16px;
 }
    

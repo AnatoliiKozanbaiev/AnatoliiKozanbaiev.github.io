@@ -11,3 +11,10 @@ jQuery(document).ready(function() {
 		offset: 120
 	});
 });
+
+jQuery(document).ready(function() {
+	jQuery('.post-2').addClass("hidden-block").viewportChecker({
+		classToAdd: 'visible-block animated slideInLeft',
+		offset: 20
+	});
+});
