@@ -1,0 +1,11 @@
+{
+  "USERNAME" : "Username",
+  "PASSWORD" : "Password",
+  "LOGIN" : "Login",
+  "YOURE_LOGGED_IN" : "You're logged in!!!",
+  "HOME" : "Home",
+  "LOGOUT": "Logout",
+  "ADMIN": "User admin",
+  "USERNAME_IS_REQUIRED" : "Username is required",
+  "PASSWRD_IS_REQUIRED" : "Password is required"
+}
