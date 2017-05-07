@@ -13,8 +13,16 @@ angular.module('Authentication')
            ----------------------------------------------*/
           $timeout(function(){
             var response = { success: username === 'admin' && password === '123' };
-            if(!response.success) {
+			
+			var id = document.getElementById('lang_select');
+            var options = id.options;
+            var value   = options[options.selectedIndex].value;
+			
+            if(!response.success && value == 'en') {
               response.message = 'Username or password is incorrect';
+            }
+			if(!response.success && value == 'ru') {
+              response.message = 'Пользователь или пароль неверны';
             }
             callback(response);
           }, 2000);
