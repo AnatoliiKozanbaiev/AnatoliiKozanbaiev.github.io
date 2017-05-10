@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>AngularJS Local Storage Application</title>
+  <script src="//code.angularjs.org/1.2.20/angular.js"></script>
+  <script src="node_modules/angular-http-server/angular-http-server.js"></script>
+  <script src="node_modules/angular-local-storage/dist/angular-local-storage.js"></script>
+  <script src="script/app.js"></script>
+  <link rel="stylesheet" href="css/app.css">
+</head>
+
+<body ng-app="Items">
+
+<div ng-controller="ItemsController">
+
+  <section class="col-left">
+    <h1 class="app-title">{{ appTitle }}</h1>
+
+    <form name="frm">
+      <table>
+        <tr>
+          <td>
+            <input type="text" name="itm" ng-model="itm" placeholder="Type name here..." required>
+          </td>
+          <td>
+            <button ng-click="addItem()" ng-disabled="frm.$invalid">Add new</button>
+          </td>
+        </tr>
+
+      </table>
+    </form>
+
+    <table id="tableItemElem" cellpadding="10" style="border-collapse: collapse;">
+      <tr ng-repeat="item in items" style="border-bottom: solid 1px lightgray;">
+        <td ng-click="checkCurrentItem(item, $index)">{{ item.itm }}
+        </td>
+
+        <td>
+          <button ng-click="deleteItem(item)">Delete</button>
+        </td>
+      </tr>
+
+    </table>
+
+
+    <div>Total Items : {{count}}</div>
+
+  </section>
+
+
+  <section class="col-right">
+    <h2 class="app-headline">{{ appHeadline }}</h2>
+    <form name="frm2">
+      <div ng-repeat="item in items">
+        <p>
+          {{ item.comment }}
+        </p>
+
+      </div>
+      <div ng-repeat="comment in comments">
+        <p>
+          {{ comment.comment }}
+        </p>
+        <hr>
+
+      </div>
+      <input type="text" name="comment" ng-model="comment" placeholder="Comment">
+      <button ng-click="addComment()" ng-disabled="frm2.$invalid">Add new</button>
+    </form>
+  </section>
+
+</div>
+
+
+</body>
+</html>
