@@ -51,7 +51,7 @@
 
   <section class="col-right">
     <h2 class="app-headline">{{ appHeadline }}</h2>
-    <form name="frm2">
+    <form>
       <div ng-repeat="item in items">
         <p>
           {{ item.comment }}
@@ -66,7 +66,7 @@
 
       </div>
       <input type="text" name="comment" ng-model="comment" placeholder="Comment">
-      <button ng-click="addComment()" ng-disabled="frm2.$invalid">Add new</button>
+      <button ng-click="addComment()" ng-disabled="!comment.length" hidden>Add new</button>
     </form>
   </section>
 
