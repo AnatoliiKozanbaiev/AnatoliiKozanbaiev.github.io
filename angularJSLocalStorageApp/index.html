@@ -8,39 +8,38 @@
   <script src="node_modules/angular-local-storage/dist/angular-local-storage.js"></script>
   <script src="script/app.js"></script>
   <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,300,100&subset=cyrillic,latin">
 </head>
 
 <body ng-app="Items">
 
-<div ng-controller="ItemsController">
+<nav>
+  <h1>Main</h1>
+  <ul>
+    <li>Overview</li>
+  </ul>
+</nav>
+
+<div class="sections" ng-controller="ItemsController">
 
   <section class="col-left">
     <h1 class="app-title">{{ appTitle }}</h1>
 
-    <form name="frm">
-      <table>
-        <tbody>
-        <tr>
-          <td>
-            <input type="text" name="itm" ng-model="itm" placeholder="Type name here..." required>
-          </td>
-          <td>
-            <button ng-click="addItem()" ng-disabled="frm.$invalid">Add new</button>
-          </td>
-        </tr>
-        </tbody>
-      </table>
-    </form>
+    <input type="text" name="itm" ng-model="itm" placeholder="Type name here..." required>
+    <button class="btn" ng-click="addItem()" ng-disabled="!itm.length">Add new</button>
 
     <table id="tableItemElem" cellpadding="10" style="border-collapse: collapse;">
       <tbody>
       <tr ng-repeat="item in items" style="border-bottom: solid 1px lightgray;">
-        <td ng-click="checkCurrentItem(item, $index)">
+        <td class="itemName" ng-click="checkCurrentItem(item, $index)">
           {{ item.itm }}
+        </td>
+        <td>
+          {{ commentsLength }}
         </td>
 
         <td>
-          <button ng-click="deleteItem(item, $index)">Delete</button>
+          <button class="btn-delete" ng-click="deleteItem(item, $index)">Delete</button>
         </td>
       </tr>
       </tbody>
@@ -53,7 +52,7 @@
 
 
   <section class="col-right">
-    <h2 class="app-headline">{{ appHeadline }}</h2>
+    <h1 class="app-headline">{{ appHeadline }}</h1>
     <form>
       <div ng-repeat="i in showComments track by $index">
 

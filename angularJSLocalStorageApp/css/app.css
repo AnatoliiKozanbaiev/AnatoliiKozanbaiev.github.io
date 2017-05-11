@@ -1,17 +1,139 @@
-.col-left {
-  width: 47%;
-  border: 1px black solid;
+
+
+body, html {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  font: 300 16px/22px "Roboto", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #777;
+}
+
+table, td {
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  width: 18%;
+  background-color: #2b2f3e;
+  color: white;
   float: left;
-  padding: 1%;
+  height: 100%;
+}
+
+.sections {
+  width: 82%;
+  background-color: #f9f9f9;
+  float: left;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.col-left {
+  box-sizing: border-box;
+  min-height: 350px;
+  width: 46.5%;
+  border: 1px #dfdfdf solid;
+  float: left;
+  padding: 2.5%;
+  margin: 2.5%;
+  padding-right: 1.5%;
+  margin-right: 1%;
+  background-color: #ffffff;
+  box-shadow: 0 0 4px rgba(0,0,0,0.5);
 }
 
 .col-right {
-  width: 47%;
-  border: 1px black solid;
-  float: right;
-  padding: 1%;
+  box-sizing: border-box;
+  min-height: 350px;
+  width: 46.5%;
+  border: 1px #dfdfdf solid;
+  float: left;
+  padding: 2.5%;
+  margin: 2.5%;
+  margin-left: 1%;
+  background-color: #ffffff;
+  box-shadow: 0 0 4px rgba(0,0,0,0.5);
+
 }
 
 .checkedItem {
-  border-left: red solid 3px;
+  border-left: #ff2f5a solid 3px;
 }
+
+h1 {
+  font-weight: 300;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 2.5%;
+  font-size: 30px;
+}
+
+input {
+  border: 1px solid #cccccc;
+  border-radius: 3px;
+  background: #ffffff !important;
+  height: 24px;
+  width: 60%;
+  font-size: 14px;
+  padding: 4px;
+  padding-left: 8px;
+}
+
+input:focus {
+  box-shadow: 0 0 5px rgba(102, 217, 255, 0.8);
+  outline: none;
+}
+
+.btn {
+  background-color: #27ccc0;
+  width: 33%;
+  height: 34px;
+  float: right;
+  padding: 4px 8px;
+  font-size: 15px;
+  color: white;
+  border: none;
+  border-radius: 3px;
+}
+
+.btn-delete {
+  float: right;
+  background-color: white;
+  height: 34px;
+  width: 40%;
+  padding: 4px 8px;
+  font-size: 15px;
+  color: #ff5e7d;
+  border: 1px solid #ff5e7d;
+  border-radius: 3px;
+}
+
+#tableItemElem {
+  width: 100%;
+  color: black;
+  font: 700 15px/22px "Roboto", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin-top: 12px;
+}
+
+.itemName {
+  max-width: 60%;
+}
+
+td {
+  padding: 6px 0;
+  width: 50%;
+}
+
+
+
+
+
+
+
+
+
+

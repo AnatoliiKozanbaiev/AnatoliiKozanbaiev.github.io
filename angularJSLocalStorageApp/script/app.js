@@ -84,20 +84,28 @@ function initiateLocalStorage() {
       if ($scope.count == 0) {
         $scope.showComments = [];
       }
+
       if ($scope.count > 0) {
+        // $scope.previousTdElem.removeAttribute("class");
         console.log($scope.checkedTdElem);
-        var newIndexMinOne = $index;
+        var newIndexMinOne = $index - 1;
+        if (newIndexMinOne <= 0) {
+          newIndexMinOne = 0;
+        }
+
         console.log(newIndexMinOne);
         $scope.checkedTdElem = $scope.tableItemElem.children[0].children[newIndexMinOne].children[0];
+
+
+        $scope.checkedItem = newIndexMinOne;
+
+        //$scope.checkedItem = 0;
+        $scope.showComments = $scope.items[$scope.checkedItem]["comments"];
         console.log($scope.checkedTdElem);
         $scope.checkedTdElem.setAttribute("class", "checkedItem");
         $scope.previousTdElem = $scope.checkedTdElem;
       }
 
-      /*if ($scope.count > 1) {
-        $scope.checkedItem = 0;
-        $scope.showComments = $scope.items[$scope.checkedItem]["comments"];
-      }*/
     };
   }]);
 
