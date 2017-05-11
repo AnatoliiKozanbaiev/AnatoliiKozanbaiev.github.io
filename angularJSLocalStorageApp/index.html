@@ -19,6 +19,7 @@
 
     <form name="frm">
       <table>
+        <tbody>
         <tr>
           <td>
             <input type="text" name="itm" ng-model="itm" placeholder="Type name here..." required>
@@ -27,20 +28,22 @@
             <button ng-click="addItem()" ng-disabled="frm.$invalid">Add new</button>
           </td>
         </tr>
-
+        </tbody>
       </table>
     </form>
 
     <table id="tableItemElem" cellpadding="10" style="border-collapse: collapse;">
+      <tbody>
       <tr ng-repeat="item in items" style="border-bottom: solid 1px lightgray;">
-        <td ng-click="checkCurrentItem(item, $index)">{{ item.itm }}
+        <td ng-click="checkCurrentItem(item, $index)">
+          {{ item.itm }}
         </td>
 
         <td>
-          <button ng-click="deleteItem(item)">Delete</button>
+          <button ng-click="deleteItem(item, $index)">Delete</button>
         </td>
       </tr>
-
+      </tbody>
     </table>
 
 
@@ -52,19 +55,15 @@
   <section class="col-right">
     <h2 class="app-headline">{{ appHeadline }}</h2>
     <form>
-      <div ng-repeat="item in items">
-        <p>
-          {{ item.comment }}
-        </p>
+      <div ng-repeat="i in showComments track by $index">
 
-      </div>
-      <div ng-repeat="comment in comments">
         <p>
-          {{ comment.comment }}
+          {{ i }}
         </p>
         <hr>
 
       </div>
+
       <input type="text" name="comment" ng-model="comment" placeholder="Comment">
       <button ng-click="addComment()" ng-disabled="!comment.length" hidden>Add new</button>
     </form>
