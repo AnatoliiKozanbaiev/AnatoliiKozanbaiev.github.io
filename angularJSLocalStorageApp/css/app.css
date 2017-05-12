@@ -53,6 +53,7 @@ nav {
   border: 1px #dfdfdf solid;
   float: left;
   padding: 2.5%;
+  padding-left: 2%;
   margin: 2.5%;
   margin-left: 1%;
   background-color: #ffffff;
@@ -61,15 +62,21 @@ nav {
 }
 
 .checkedItem {
-  border-left: #ff2f5a solid 3px;
+  border-left: #ff2f5a solid 4px;
 }
 
 h1 {
   font-weight: 300;
   padding: 0;
   margin: 0;
-  margin-bottom: 2.5%;
-  font-size: 30px;
+  margin-bottom: 6%;
+  font-size: 32px;
+}
+
+h1.main {
+  padding: 10%;
+  color: #515564;
+  margin-bottom: 22%;
 }
 
 input {
@@ -81,12 +88,21 @@ input {
   font-size: 14px;
   padding: 4px;
   padding-left: 8px;
+  color: #757575;
 }
 
 input:focus {
-  box-shadow: 0 0 5px rgba(102, 217, 255, 0.8);
+  box-shadow: 0 0 5px rgba(39, 204, 192, 0.8);
   outline: none;
 }
+input::-moz-placeholder {
+  color: #DCDCDC;
+}
+input::-webkit-input-placeholder {
+  color: #DCDCDC;
+}
+
+/*---------------------------------------------*/
 
 .btn {
   background-color: #27ccc0;
@@ -98,35 +114,187 @@ input:focus {
   color: white;
   border: none;
   border-radius: 3px;
+  outline: none;
+}
+.btn:hover {
+  background: #ff3554;
+}
+.btn:active {
+  background: #e63654;
 }
 
 .btn-delete {
-  float: right;
   background-color: white;
   height: 34px;
-  width: 40%;
+  width: 100%;
   padding: 4px 8px;
   font-size: 15px;
   color: #ff5e7d;
   border: 1px solid #ff5e7d;
   border-radius: 3px;
+  outline: none;
+}
+.btn-delete:hover {
+  background-color: #27ccc0;
+  color: white;
+  border: none;
+}
+.btn-delete:active {
+  background-color: #27c0c0;
+  color: white;
+  border: none;
 }
 
-#tableItemElem {
+.btn-send-comment {
+  background-color: #F5F5F5;
+  height: 50px;
+  width: 50px;
+  border: none;
+  vertical-align: top;
+  outline: none;
+  margin-right: 2.5%;
+}
+.btn-send-comment:hover {
+  background-color: #D3D3D3;
+}
+.btn-send-comment:active {
+  background-color: #A9A9A9;
+}
+
+.btn-unchecked-comment {
+  background-color: #ff8a00;
+  height: 50px;
+  width: 50px;
+  border: none;
+  vertical-align: top;
+  outline: none;
+  margin-right: 2.5%;
+}
+.btn-unchecked-comment:hover {
+  background-color: #47568c;
+}
+.btn-unchecked-comment:active {
+  background-color: #2b2f3e;
+}
+
+.btn-checked-comment {
+  background-color: #47568c;
+  height: 50px;
+  width: 50px;
+  border: none;
+  vertical-align: top;
+  outline: none;
+  margin-right: 2.5%;
+}
+
+/*---------------------------------------------*/
+
+
+tr.dividing-line {
+  border-bottom: solid 1px #F5F5F5;
+}
+
+
+table#tableItemElem {
   width: 100%;
   color: black;
   font: 700 15px/22px "Roboto", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin-top: 12px;
-}
-
-.itemName {
-  max-width: 60%;
+  table-layout: fixed;
 }
 
 td {
   padding: 6px 0;
-  width: 50%;
+  padding-left: 10px;
 }
+
+td.for-btn-delete {
+  width: 28%;
+}
+
+td.itemName {
+  width: 72%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+}
+
+a {
+  display: block;
+  width: 100%;
+  color: white;
+  background-color: #ff3554;
+  text-decoration: none;
+  user-select: none;
+  padding: 15px 25px;
+  outline: none;
+}
+
+a.github-link {
+  margin-top: 5%;
+}
+a.github-link:hover, a.overview:hover {
+  background: #27ccc0;
+}
+a.github-link:active, a.overview:active {
+  background: #27c0c0;
+}
+
+.total-items {
+  margin-top: 35%;
+  color: #DCDCDC;
+}
+
+textarea {
+  width: 78%;
+  outline: none;
+  resize: none;
+  overflow: auto;
+  border: 1px solid #cccccc;
+  border-radius: 3px;
+  font-size: 16px;
+}
+
+textarea:focus {
+  box-shadow: 0 0 5px rgba(39, 204, 192, 0.8);
+}
+
+.bind-textarea {
+  margin-top: 5%;
+}
+
+hr {
+  color: #F5F5F5;
+  background-color: #F5F5F5;
+  border: none;
+  height: 1px;
+}
+
+p.comment-text {
+  display: inline-block;
+  width: 78%;
+  vertical-align: top;
+  padding: 0;
+  padding-bottom: 2%;
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.4em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+}
+
+div.individual-comment {
+  margin-top: 4%;
+  margin-bottom: 5%;
+}
+
+
+
+
+
+
+
 
 
 

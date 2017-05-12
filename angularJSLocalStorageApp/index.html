@@ -14,10 +14,9 @@
 <body ng-app="Items">
 
 <nav>
-  <h1>Main</h1>
-  <ul>
-    <li>Overview</li>
-  </ul>
+  <h1 class="main">Main</h1>
+  <a href="" class="overview">Overview</a>
+  <a href="https://github.com/AnatoliiKozanbaiev/angular_js_local_storage_app" class="github-link">View on Github</a>
 </nav>
 
 <div class="sections" ng-controller="ItemsController">
@@ -25,20 +24,18 @@
   <section class="col-left">
     <h1 class="app-title">{{ appTitle }}</h1>
 
-    <input type="text" name="itm" ng-model="itm" placeholder="Type name here..." required>
-    <button class="btn" ng-click="addItem()" ng-disabled="!itm.length">Add new</button>
+    <form name="frm">
+      <input type="text" name="itm" ng-model="itm" placeholder="Type name here..." required>
+      <button class="btn" ng-click="addItem()" ng-disabled="frm.$invalid">Add new</button>
+    </form>
 
     <table id="tableItemElem" cellpadding="10" style="border-collapse: collapse;">
       <tbody>
-      <tr ng-repeat="item in items" style="border-bottom: solid 1px lightgray;">
+      <tr class="dividing-line" ng-repeat="item in items">
         <td class="itemName" ng-click="checkCurrentItem(item, $index)">
           {{ item.itm }}
         </td>
-        <td>
-          {{ commentsLength }}
-        </td>
-
-        <td>
+        <td class="for-btn-delete">
           <button class="btn-delete" ng-click="deleteItem(item, $index)">Delete</button>
         </td>
       </tr>
@@ -46,25 +43,26 @@
     </table>
 
 
-    <div>Total Items : {{count}}</div>
+    <div class="total-items">Total Items : {{count}}</div>
 
   </section>
 
 
   <section class="col-right">
-    <h1 class="app-headline">{{ appHeadline }}</h1>
-    <form>
-      <div ng-repeat="i in showComments track by $index">
-
-        <p>
+    <h1 class="app-headline">{{ appHeadline }}{{checkedComment}}</h1>
+    <form id="trigger-button">
+      <div class="individual-comment" ng-repeat="i in showComments track by $index" ng-click="checkCurrentComment(i, $index)">
+        <button class="btn-unchecked-comment"></button>
+        <p class="comment-text">
           {{ i }}
         </p>
         <hr>
-
       </div>
 
-      <input type="text" name="comment" ng-model="comment" placeholder="Comment">
-      <button ng-click="addComment()" ng-disabled="!comment.length" hidden>Add new</button>
+      <div class="bind-textarea">
+        <button class="btn-send-comment" ng-click="addComment()" ng-disabled="!comment.length"></button>
+        <textarea wrap="off" cols="30" rows="3" type="text" name="comment" ng-model="comment"></textarea>
+      </div>
     </form>
   </section>
 
