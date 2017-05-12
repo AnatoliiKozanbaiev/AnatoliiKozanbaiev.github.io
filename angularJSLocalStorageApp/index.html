@@ -33,7 +33,8 @@
       <tbody>
       <tr class="dividing-line" ng-repeat="item in items">
         <td class="itemName" ng-click="checkCurrentItem(item, $index)">
-          {{ item.itm }}
+          {{ item.itm}}
+          <span class="comments-length">{{ item.comments.length }}</span>
         </td>
         <td class="for-btn-delete">
           <button class="btn-delete" ng-click="deleteItem(item, $index)">Delete</button>

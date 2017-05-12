@@ -294,6 +294,17 @@ div.individual-comment {
   margin-bottom: 5%;
 }
 
+.comments-length {
+  display: inline-block;
+  background-color: #27ccc0;
+  color: white;
+  position: relative;
+  width: 35px;
+  border-radius: 15px;
+  text-align: center;
+  margin-left: 4%;
+}
+
 
 
 
