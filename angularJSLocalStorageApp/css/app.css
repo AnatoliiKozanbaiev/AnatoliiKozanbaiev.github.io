@@ -115,6 +115,7 @@ input::-webkit-input-placeholder {
   border: none;
   border-radius: 3px;
   outline: none;
+  cursor: pointer;
 }
 .btn:hover {
   background: #ff3554;
@@ -133,6 +134,7 @@ input::-webkit-input-placeholder {
   border: 1px solid #ff5e7d;
   border-radius: 3px;
   outline: none;
+  cursor: pointer;
 }
 .btn-delete:hover {
   background-color: #27ccc0;
@@ -153,6 +155,7 @@ input::-webkit-input-placeholder {
   vertical-align: top;
   outline: none;
   margin-right: 2.5%;
+  cursor: pointer;
 }
 .btn-send-comment:hover {
   background-color: #D3D3D3;
@@ -169,6 +172,7 @@ input::-webkit-input-placeholder {
   vertical-align: top;
   outline: none;
   margin-right: 2.5%;
+  cursor: pointer;
 }
 .btn-unchecked-comment:hover {
   background-color: #47568c;
@@ -185,6 +189,7 @@ input::-webkit-input-placeholder {
   vertical-align: top;
   outline: none;
   margin-right: 2.5%;
+  cursor: pointer;
 }
 
 /*---------------------------------------------*/
