@@ -35,7 +35,7 @@ function initiateLocalStorage() {
       $scope.count = $scope.items.length;
       if ($scope.count == 1) {
         $scope.showComments = $scope.items[$scope.checkedItem]["comments"];
-        $scope.showComments.push($scope.comment);
+        // $scope.showComments.push($scope.comment);
         getLocalStorage.updateItems($scope.items);
         $scope.items = getLocalStorage.getItems();
       }
