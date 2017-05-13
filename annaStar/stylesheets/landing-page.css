@@ -97,6 +97,14 @@ h6 {
     .intro-divider {
         width: 100%;
     }
+
+    .btn-instagram {
+      padding: 10px 10px;
+    }
+
+    a.btn.btn-sm {
+      padding: 5px 4px;
+    }
 }
 
 .network-name {
