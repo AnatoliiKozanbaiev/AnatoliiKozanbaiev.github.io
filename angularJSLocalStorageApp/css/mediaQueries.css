@@ -55,12 +55,17 @@
     margin-top: 5%;
   }
 
+  h1 {
+    font-size: 24px;
+  }
+
   h1.main {
-    margin-right: 10%;
+    margin-right: 5%;
   }
 
   a.overview, a.github-link {
-    padding: 10px 4px;
-    width: 30%;
+    padding: 6px 1px;
+    width: 31%;
+    font-size: 14px;
   }
 }
