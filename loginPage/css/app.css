@@ -44,7 +44,7 @@ body {
 }
 
 .jumbotron .container {
-  max-width: 100%;
+  width: 100%;
 }
 
 .container {
