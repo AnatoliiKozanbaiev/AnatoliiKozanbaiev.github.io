@@ -15,8 +15,9 @@ legend.calculator-border {
 	border-bottom:none;
 }
 
-button {
-	margin-top: 40px;
+button.calculateBtn{
+	margin-top: 30px;
+	margin-left: 15px;
 }
 
 label {
@@ -26,4 +27,25 @@ label {
 
 .form-inline {
 	text-align: center;
+}
+table {
+	text-align: center;
+	margin: 20px auto 0;
+	table-layout: fixed; 
+	width: 60%;
+}
+table thead td {
+	background-color: #428bca;
+	color: white;
+	padding: 10px 10px;
+}
+
+td {
+	white-space: nowrap; 
+	overflow: hidden; 
+	text-overflow: ellipsis;
+}
+
+td.removeTD {
+	width: 20%;
 }

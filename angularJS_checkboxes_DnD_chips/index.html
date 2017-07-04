@@ -1,0 +1,184 @@
+<!doctype html>
+<html ng-app="app">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+	content="width=device-width, initial-scale=1.0">
+	<title>AngularJS</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.js"></script>
+	<script src="scripts/dndLists.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+	<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/app.css">
+
+	<script src="scripts/checkboxController.js"></script>
+	<script src="scripts/dndController.js"></script>
+	<script src="scripts/chipsController.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="page-header">
+			<h1 class="text-primary">The output of any number of checkboxes</h1>
+		</div>
+
+		<div ng-controller="outputCheckboxesCtrl">
+
+			<div class="row">
+				<div class="col-md-6">
+					<p class="alert alert-success">selectables</p>
+					<div class="form-group">
+						<label ng-repeat="fruitName in fruits track by $index" class="checkbox-inline">
+							<input type="checkbox" name="selectedFruits[]" value="{{fruitName}}"
+							ng-checked="selection.indexOf(fruitName) > -1" ng-click="toggleSelection(fruitName)"
+							> {{fruitName}}
+						</label>
+					</div>
+				</div>
+
+				<div class="col-md-6" id="alert">
+					<p class="alert alert-success">Send button - the component of JSON representation of all selected Checkboxes</p>
+					<button class="btn btn-danger" ng-click="sendCheckboxes()">SEND button</button>
+
+					<form class="form-inline" name="frm">
+						<div class="form-group">
+							<input class="form-control" type="text" name="itm" ng-model="itm" placeholder="Type here..." required>
+						</div>
+						<button class="btn btn-primary" ng-click="addCheckbox()" ng-disabled="frm.$invalid">Add checkbox</button>
+					</form>
+					<br>
+
+					<form class="form-inline" name="frm2">
+						<div class="form-group">
+							<input class="form-control" type="text" name="itmRemove" ng-model="itmRemove" placeholder="Type here..."
+							required>
+						</div>
+						<button class="btn btn-primary" ng-click="removeCheckbox()" ng-disabled="frm2.$invalid">Remove checkbox
+						</button>
+					</form>
+					<br>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-6">
+					<h4>selection</h4>
+					<pre>{{selection|json}}</pre>
+				</div>
+
+				<div class="col-md-6">
+					<h4>input</h4>
+					<pre>{{fruits|json}}</pre>
+				</div>
+			</div>
+
+		</div>
+
+		<!-- ---------------------------------------------------------------------------- -->
+		<hr>
+
+
+		<div class="page-header">
+			<h1 class="text-primary">The output of draggable zones with prioritization</h1>
+		</div>
+
+		<div ng-controller="dndController">
+			<div class="alert alert-success">
+				Drag and drop the list of items to move them around
+			</div>
+
+			<div class="row">
+				<div class="col-md-6">
+					<button class="btn btn-danger" ng-click="sendTasks()">SEND High Priority Tasks</button>
+				</div>
+
+				<div class="col-md-6" id="tasksAlert">
+
+				</div>
+			</div>
+			<br>
+
+			<div class="twoDndLists row">
+
+				<div class="col-md-8">
+					<div class="row">
+						<div ng-repeat="(listName, list) in models.lists" class="col-md-6">
+							<div class="panel panel-info">
+								<div class="panel-heading">
+									<h3 class="panel-title">List {{listName}}</h3>
+								</div>
+								<div class="panel-body">
+									<ul dnd-list="list">
+										<li ng-repeat="item in list"
+										dnd-draggable="item"
+										dnd-moved="list.splice($index, 1)"
+										dnd-effect-allowed="move"
+										dnd-selected="models.selected = item"
+										ng-class="{'selected': models.selected === item}"
+										>{{item.label}}</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div view-source="simple"></div>
+
+				</div>
+
+				<div class="col-md-4">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title">Generated Model</h3>
+						</div>
+						<div class="panel-body">
+							<pre class="code">{{modelAsJson}}</pre>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+
+
+		<!-- ---------------------------------------------------------------------------- -->
+		<hr>
+
+
+		<div class="page-header">
+			<h1 class="text-primary">The output of chips</h1>
+		</div>
+
+		<div ng-controller="BasicDemoCtrl as ctrl" layout="column" class="chipsdemoBasicUsage">
+
+			<div class="row">
+				<div class="col-md-6">
+					<button class="btn btn-danger" ng-click="sendChips()">SEND chips</button>
+				</div>
+
+				<div class="col-md-6" id="chipsAlert">
+
+				</div>
+			</div>
+
+			<md-content class="md-padding" layout="column">
+				<h2 class="md-title">Add or remove any values</h2>
+
+				<md-chips ng-model="ctrl.roFruitNames" ng-click="ctrl.getSelectedChipIndex($event)">
+					<md-chip-template>
+						<strong>{{$chip}}</strong>
+						<em>(fruit)</em>
+					</md-chip-template>
+				</md-chips>
+			</md-content>
+
+		</div>
+
+	</div>
+</body>
+</html>
