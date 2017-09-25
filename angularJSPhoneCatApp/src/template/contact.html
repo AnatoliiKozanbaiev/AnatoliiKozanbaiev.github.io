@@ -1,0 +1,70 @@
+<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">-->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.min.js"></script>-->
+
+<h1>Contact Page</h1>
+
+<div class="vertical-middle">
+    <div class="container">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h2 class="panel-title">Contact Form</h2>
+            </div>
+            <div class="panel-body">
+                <form name="myForm" class="form-horizontal" role="form">
+                    <div class="form-group" ng-class="{ 'has-error': myForm.user.$invalid && myForm.user.$dirty }">
+                        <label for="user" class="col-lg-2 control-label">Name</label>
+                        <div class="col-lg-10">
+                            <input ng-model="user" type="text" class="form-control" id="user" name="user"
+                                   placeholder="Your Name" required>
+                            <span style="color:red" ng-show="myForm.user.$dirty && myForm.user.$invalid">
+                                <span ng-show="myForm.user.$error.required">Username is required.</span>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="form-group" ng-class="{ 'has-error': myForm.email.$invalid && myForm.email.$dirty }">
+                        <label for="email" class="col-lg-2 control-label">Email</label>
+                        <div class="col-lg-10">
+                            <input ng-model="email" type="email" class="form-control" id="email"
+                                   name="email" placeholder="Your Email" required>
+                            <span style="color:red" ng-show="myForm.email.$dirty && myForm.email.$invalid">
+                                <span ng-show="myForm.email.$error.required">Email is required.</span>
+                                <span ng-show="myForm.email.$error.email">Invalid email address.</span>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="form-group" ng-class="{ 'has-error': myForm.subject.$invalid && myForm.subject.$dirty }">
+                        <label for="subject" class="col-lg-2 control-label">Subject</label>
+                        <div class="col-lg-10">
+                            <input ng-model="subject" type="text" class="form-control" id="subject"
+                                   name="subject" placeholder="Subject Message" required>
+                            <span style="color:red" ng-show="myForm.subject.$dirty && myForm.subject.$invalid">
+                                <span ng-show="myForm.subject.$error.required">Subject is required.</span>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="form-group" ng-class="{ 'has-error': myForm.message.$invalid && myForm.message.$dirty }">
+                        <label for="message" class="col-lg-2 control-label">Message</label>
+                        <div class="col-lg-10">
+                            <textarea ng-model="message" class="form-control" rows="4" id="message"
+                                      name="message" placeholder="Your message..." required></textarea>
+                            <span style="color:red" ng-show="myForm.message.$dirty && myForm.message.$invalid">
+                                <span ng-show="myForm.message.$error.required">Message is required.</span>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-lg-offset-2 col-lg-10">
+                            <button type="submit" ng-click="sendForm()" class="btn btn-danger" ng-disabled="myForm.$invalid">
+                                Send Message
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

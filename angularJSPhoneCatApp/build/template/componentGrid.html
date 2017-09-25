@@ -1,0 +1,21 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">Колоночный компонент</div>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Имя</th>
+            <th>Фамилия</th>
+            <th>Расположение</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr ng-repeat="employee in $ctrl.info">
+            <td>{{ employee.firstName }}</td>
+            <td>{{ employee.lastName }}</td>
+            <td>{{ employee.location }}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
