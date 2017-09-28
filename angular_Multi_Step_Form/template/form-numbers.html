@@ -1,0 +1,26 @@
+<div class="form-group">
+    <span ng-hide="formData.amount == undefined">
+        <label for="amount">Amount</label>
+    </span>
+    <span ng-style="lightcoralStyle" ng-show="formData.amount == undefined">
+        <label for="amount">Amount is required</label>
+    </span>
+    <input type="number" class="form-control" id="amount" name="amount"
+           ng-class="{ 'has-error': myForm.amount.$invalid && myForm.amount.$dirty }"
+           ng-model="formData.amount" placeholder="integer value from 1 to 10000" required>
+</div>
+
+<div class="form-group">
+    <label for="term">Term</label>
+    <select class='form-control' id="term" name="term" ng-model="formData.term" ng-init="">
+        <option ng-repeat="term in terms" value="{{ term.value }}">{{ term.value }}</option>
+    </select>
+</div>
+
+<div class="form-group row">
+    <div class="col-xs-6 col-xs-offset-3">
+        <a ui-sref="form.profile" class="btn btn-block btn-info" ng-disabled="formData.amount == undefined">
+            Next Section <span class="glyphicon glyphicon-circle-arrow-right"></span>
+        </a>
+    </div>
+</div>

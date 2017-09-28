@@ -1,0 +1,76 @@
+<div class="form-group">
+    <span ng-hide="formData.id == undefined">
+        <label for="id">ID</label>
+    </span>
+    <span ng-style="lightcoralStyle" ng-show="formData.id == undefined">
+        <label for="id">ID is required!</label>
+        <span class="error" ng-show="myForm.id.$error.minlength">
+            ID is too short!</span>
+    </span>
+    <input type="number" class="form-control" id="id" name="id"
+           ng-class="{ 'has-error': myForm.id.$invalid && myForm.id.$dirty }"
+           ng-minlength="10"
+           ng-model="formData.id" placeholder="enter your ID" required
+           onkeyup="this.style.backgroundColor = is_valid_inn(this.value) ? '#dfd' : '#fdd'">
+</div>
+
+<div class="form-group">
+    <span ng-hide="formData.name == undefined">
+        <label for="id">Name</label>
+    </span>
+    <span ng-style="lightcoralStyle" ng-show="formData.name == undefined">
+        <label for="name">Name is required</label>
+    </span>
+    <input type="text" class="form-control" id="name" name="name"
+           ng-class="{ 'has-error': myForm.name.$invalid && myForm.name.$dirty }"
+           ng-model="formData.name" placeholder="enter your name" required>
+</div>
+
+<div class="form-group">
+    <span ng-hide="formData.surname == undefined">
+        <label for="id">Surname</label>
+    </span>
+    <span ng-style="lightcoralStyle" ng-show="formData.surname == undefined">
+        <label for="surname">Surname is required</label>
+    </span>
+    <input type="text" class="form-control" id="surname" name="surname"
+           ng-class="{ 'has-error': myForm.surname.$invalid && myForm.surname.$dirty }"
+           ng-model="formData.surname" placeholder="enter your surname" required>
+</div>
+
+<!-- vs-google-autocomplete="{ types:['(cities)'] }" -->
+<div class="form-group">
+    <span ng-hide="formData.cityUKR == undefined">
+        <label for="city">City</label>
+    </span>
+    <span ng-style="lightcoralStyle" ng-show="formData.cityUKR == undefined">
+        <label for="city">City is required</label>
+    </span>
+    <input vs-google-autocomplete="{ types:['(cities)'],componentRestrictions: { country: 'UKR' } }"
+           ng-model="formData.cityUKR"
+           type="text"
+           name="city"
+           id="city"
+           class="form-control"
+           placeholder="Enter city name of Ukraine"
+           ng-class="{ 'has-error': myForm.city.$invalid && myForm.city.$dirty }"
+           value="Киев, Украина, 02000" required>
+</div>
+
+
+<div class="form-group row">
+    <div class="col-xs-6">
+        <a ui-sref="form.numbers" class="btn btn-block btn-info"
+           ng-disabled="formData.id == undefined || formData.name == undefined ||
+           formData.surname == undefined || formData.cityUKR == undefined || myForm.$invalid">
+            Previous Section <span class="glyphicon glyphicon-circle-arrow-left"></span>
+        </a>
+    </div>
+    <div class="col-xs-6">
+        <a ui-sref="form.resume" class="btn btn-block btn-info"
+           ng-disabled="formData.id == undefined || formData.name == undefined ||
+           formData.surname == undefined || formData.cityUKR == undefined || myForm.$invalid">
+            Next Section <span class="glyphicon glyphicon-circle-arrow-right"></span>
+        </a>
+    </div>
+</div>

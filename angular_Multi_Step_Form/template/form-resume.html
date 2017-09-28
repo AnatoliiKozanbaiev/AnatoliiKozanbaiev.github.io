@@ -1,0 +1,28 @@
+<div class="text-center">
+    <span class="glyphicon glyphicon-user"></span>
+    <span ng-style="cyanStyle">
+        <h3>You entered:</h3>
+    </span>
+    <hr>
+
+    <h4>Amount: {{formData.amount}}</h4>
+    <h4>Term: {{formData.term}}</h4>
+    <h4>Id: {{formData.id}}</h4>
+    <h4>Name: {{formData.name}}</h4>
+    <h4>Surname: {{formData.surname}}</h4>
+    <h4>City: {{formData.cityUKR}}</h4>
+
+    <div class="form-group row">
+        <div class="col-xs-6">
+            <a ui-sref="form.profile" class="btn btn-block btn-info">
+                Previous Section <span class="glyphicon glyphicon-circle-arrow-left"></span>
+            </a>
+        </div>
+        <div class="col-xs-6">
+            <button type="submit" class="btn btn-danger btn-block"
+                    ng-disabled="formData.id == undefined || formData.name == undefined ||
+                    formData.surname == undefined || formData.cityUKR == undefined ||
+                    myForm.$invalid">Submit</button>
+        </div>
+    </div>
+</div>
