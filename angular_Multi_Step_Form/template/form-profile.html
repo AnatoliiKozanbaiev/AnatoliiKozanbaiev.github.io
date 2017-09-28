@@ -23,7 +23,7 @@
     </span>
     <input type="text" class="form-control" id="name" name="name"
            ng-class="{ 'has-error': myForm.name.$invalid && myForm.name.$dirty }"
-           ng-model="formData.name" placeholder="enter your name" required>
+           ng-model="formData.name" placeholder="enter your name" ng-maxlength="20" required>
 </div>
 
 <div class="form-group">
@@ -35,7 +35,7 @@
     </span>
     <input type="text" class="form-control" id="surname" name="surname"
            ng-class="{ 'has-error': myForm.surname.$invalid && myForm.surname.$dirty }"
-           ng-model="formData.surname" placeholder="enter your surname" required>
+           ng-model="formData.surname" placeholder="enter your surname" ng-maxlength="20" required>
 </div>
 
 <!-- vs-google-autocomplete="{ types:['(cities)'] }" -->
