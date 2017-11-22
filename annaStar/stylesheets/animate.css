@@ -15,6 +15,8 @@
   animation-fill-mode: both;
 }
 
+.custom { animation-fill-mode: none;  }
+
 .animated.infinite {
   -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;

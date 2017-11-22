@@ -785,7 +785,7 @@
 }
 
 .hidden-block {
-	opacity:0;
+	opacity:1;
 }
 
 .visible-block {
